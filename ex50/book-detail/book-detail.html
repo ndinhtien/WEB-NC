@@ -1,0 +1,31 @@
+<div class="container" *ngIf="book">
+  <h3>Book Details</h3>
+  <div>
+    <strong>Ten Sach:</strong> {{ book.Tensach }}
+  </div>
+  <div>
+    <strong>Gia Ban:</strong> {{ book.Giaban }}
+  </div>
+  <div>
+    <strong>Mo Ta:</strong> {{ book.Mota }}
+  </div>
+  <div>
+    <strong>Anh Bia:</strong> <br>
+    <img [src]="'http://localhost:3000/img/' + book.Anhbia" alt="{{ book.Anhbia }}" width="100">
+  </div>
+  <div>
+    <strong>Ngay Cap Nhat:</strong> {{ book.Ngaycapnhat }}
+  </div>
+  <div>
+    <strong>So Luong Ton:</strong> {{ book.Soluongton }}
+  </div>
+  <div>
+    <strong>Ma CD:</strong> {{ book.MaCD }}
+  </div>
+  <div>
+    <strong>Ma NXB:</strong> {{ book.MaNXB }}
+  </div>
+  
+  <br>
+  <a routerLink="/ex50">Back to List</a>
+</div>

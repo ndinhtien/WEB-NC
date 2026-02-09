@@ -1,0 +1,44 @@
+<div class="container">
+  <h3>QUẢN LÝ THÔNG TIN SÁCH</h3>
+  
+  <a routerLink="create" class="btn-create">Create New</a>
+
+  <table border="1" cellpadding="5" cellspacing="0" style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+    <thead>
+      <tr style="background-color: #f2f2f2;">
+        <th>Tensach</th>
+        <th>Giaban</th>
+        <th>Mota</th>
+        <th>Anhbia</th>
+        <th>Ngaycapnhat</th>
+        <th>Soluongton</th>
+        <th>MaCD</th>
+        <th>MaNXB</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (book of books; track book.id) {
+        <tr>
+          <td>{{ book.Tensach }}</td>
+          <td>{{ book.Giaban }}</td>
+          <td>{{ book.Mota }}</td>
+          <td>
+            <img [src]="'http://localhost:3000/img/' + book.Anhbia" alt="{{ book.Anhbia }}" width="50">
+            <br>
+            {{ book.Anhbia }}
+          </td>
+          <td>{{ book.Ngaycapnhat }}</td>
+          <td>{{ book.Soluongton }}</td>
+          <td>{{ book.MaCD }}</td>
+          <td>{{ book.MaNXB }}</td>
+          <td>
+            <a [routerLink]="['edit', book.id]">Edit</a> | 
+            <a [routerLink]="['detail', book.id]">Details</a> | 
+            <a href="javascript:void(0)" (click)="deleteBook(book.id)">Delete</a>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>
