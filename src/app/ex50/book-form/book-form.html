@@ -1,0 +1,40 @@
+<div class="container">
+  <h3>{{ isEditMode ? 'Edit Book' : 'Create New Book' }}</h3>
+  <form (ngSubmit)="onSubmit()" #bookForm="ngForm">
+    <div>
+      <label>Ten Sach:</label>
+      <input type="text" [(ngModel)]="book.Tensach" name="Tensach" required>
+    </div>
+    <div>
+      <label>Gia Ban:</label>
+      <input type="number" [(ngModel)]="book.Giaban" name="Giaban" required>
+    </div>
+    <div>
+      <label>Mo Ta:</label>
+      <textarea [(ngModel)]="book.Mota" name="Mota" required></textarea>
+    </div>
+    <div>
+      <label>Anh Bia (Filename):</label>
+      <input type="text" [(ngModel)]="book.Anhbia" name="Anhbia" required>
+    </div>
+    <div>
+      <label>Ngay Cap Nhat:</label>
+      <input type="text" [(ngModel)]="book.Ngaycapnhat" name="Ngaycapnhat" required>
+    </div>
+    <div>
+      <label>So Luong Ton:</label>
+      <input type="number" [(ngModel)]="book.Soluongton" name="Soluongton" required>
+    </div>
+    <div>
+      <label>Ma CD:</label>
+      <input type="number" [(ngModel)]="book.MaCD" name="MaCD" required>
+    </div>
+    <div>
+      <label>Ma NXB:</label>
+      <input type="number" [(ngModel)]="book.MaNXB" name="MaNXB" required>
+    </div>
+    
+    <button type="submit" [disabled]="!bookForm.form.valid">Save</button>
+    <a routerLink="/ex50">Cancel</a>
+  </form>
+</div>
